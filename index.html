@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Vorlesung</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Samuel Merk &amp; André Epp" />
+    <meta name="date" content="2022-11-01" />
+    <script src="libs/header-attrs-2.17/header-attrs.js"></script>
+    <script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+    <script src="libs/jquery-3.5.1/jquery.min.js"></script>
+    <script src="libs/proj4js-2.3.15/proj4.js"></script>
+    <link href="libs/highcharts-9.3.1/css/motion.css" rel="stylesheet" />
+    <script src="libs/highcharts-9.3.1/highcharts.js"></script>
+    <script src="libs/highcharts-9.3.1/highcharts-3d.js"></script>
+    <script src="libs/highcharts-9.3.1/highcharts-more.js"></script>
+    <script src="libs/highcharts-9.3.1/modules/stock.js"></script>
+    <script src="libs/highcharts-9.3.1/modules/map.js"></script>
+    <script src="libs/highcharts-9.3.1/modules/data.js"></script>
+    <script src="libs/highcharts-9.3.1/modules/exporting.js"></script>
+    <script src="libs/highcharts-9.3.1/modules/offline-exporting.js"></script>
+    <script src="libs/highcharts-9.3.1/modules/drilldown.js"></script>
+    <script src="libs/highcharts-9.3.1/modules/item-series.js"></script>
+    <script src="libs/highcharts-9.3.1/modules/overlapping-datalabels.js"></script>
+    <script src="libs/highcharts-9.3.1/modules/annotations.js"></script>
+    <script src="libs/highcharts-9.3.1/modules/export-data.js"></script>
+    <script src="libs/highcharts-9.3.1/modules/funnel.js"></script>
+    <script src="libs/highcharts-9.3.1/modules/heatmap.js"></script>
+    <script src="libs/highcharts-9.3.1/modules/treemap.js"></script>
+    <script src="libs/highcharts-9.3.1/modules/sankey.js"></script>
+    <script src="libs/highcharts-9.3.1/modules/dependency-wheel.js"></script>
+    <script src="libs/highcharts-9.3.1/modules/organization.js"></script>
+    <script src="libs/highcharts-9.3.1/modules/solid-gauge.js"></script>
+    <script src="libs/highcharts-9.3.1/modules/streamgraph.js"></script>
+    <script src="libs/highcharts-9.3.1/modules/sunburst.js"></script>
+    <script src="libs/highcharts-9.3.1/modules/vector.js"></script>
+    <script src="libs/highcharts-9.3.1/modules/wordcloud.js"></script>
+    <script src="libs/highcharts-9.3.1/modules/xrange.js"></script>
+    <script src="libs/highcharts-9.3.1/modules/tilemap.js"></script>
+    <script src="libs/highcharts-9.3.1/modules/venn.js"></script>
+    <script src="libs/highcharts-9.3.1/modules/gantt.js"></script>
+    <script src="libs/highcharts-9.3.1/modules/timeline.js"></script>
+    <script src="libs/highcharts-9.3.1/modules/parallel-coordinates.js"></script>
+    <script src="libs/highcharts-9.3.1/modules/bullet.js"></script>
+    <script src="libs/highcharts-9.3.1/modules/coloraxis.js"></script>
+    <script src="libs/highcharts-9.3.1/modules/dumbbell.js"></script>
+    <script src="libs/highcharts-9.3.1/modules/lollipop.js"></script>
+    <script src="libs/highcharts-9.3.1/modules/series-label.js"></script>
+    <script src="libs/highcharts-9.3.1/plugins/motion.js"></script>
+    <script src="libs/highcharts-9.3.1/custom/reset.js"></script>
+    <script src="libs/highcharts-9.3.1/modules/boost.js"></script>
+    <script src="libs/highchart-binding-0.9.4/highchart.js"></script>
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center,  middle, hide_logo
+
+
+&lt;head&gt;
+&lt;script src="https://kit.fontawesome.com/994a28441d.js" crossorigin="anonymous"&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;!--&lt;div class="my-footer"&gt;&lt;span&gt;Folien CC-BY verfügbar unter https://atelier-phka-merk-2020.netlify.app&lt;/span&gt;&lt;/div&gt; 
+
+
+&lt;style&gt;
+.remark-slide-number {
+  font-size: 10pt;
+  margin-bottom: -11.6px;
+  margin-right: 10px;
+  color: red; /* white */
+  opacity: 0; /* default: 0.5 */
+}
+&lt;/style&gt;
+--&gt; 
+
+<div>
+<style type="text/css">.xaringan-extra-logo {
+width: 80px;
+height: 128px;
+z-index: 0;
+background-image: url(https://apps.samuel-merk.de/data/PHK_2018_Logo_V1_FARBE_NUR_PH.svg);
+background-size: contain;
+background-repeat: no-repeat;
+position: absolute;
+top:1em;right:1em;
+}
+</style>
+<script>(function () {
+  let tries = 0
+  function addLogo () {
+    if (typeof slideshow === 'undefined') {
+      tries += 1
+      if (tries < 10) {
+        setTimeout(addLogo, 100)
+      }
+    } else {
+      document.querySelectorAll('.remark-slide-content:not(.title-slide):not(.inverse):not(.hide_logo)')
+        .forEach(function (slide) {
+          const logo = document.createElement('div')
+          logo.classList = 'xaringan-extra-logo'
+          logo.href = null
+          slide.appendChild(logo)
+        })
+    }
+  }
+  document.addEventListener('DOMContentLoaded', addLogo)
+})()</script>
+</div>
+
+
+.phg[
+# Vorlesung:
+
+&lt;i class="fas fa-microscope fa-7x"&gt;&lt;/i&gt;
+
+### Qualitative und quantitative Forschungsmethoden
+
+---  
+.em14[Samuel Merk | PH Karlsruhe]]  
+
+
+
+---
+# Was habe ich heute vor?
+.em14[
+* Vertiefung der Begriffe
+* Ihre Fragen zu Video &amp; Aufgaben
+* Probleme bei Fragebögen und wie man Sie vermeidet
+
+]
+
+---
+# Vertiefung der Begriffe
+<div id="htmlwidget-427de8a9d2423536da4d" style="width:1008px;height:504px;" class="highchart html-widget"></div>
+<script type="application/json" data-for="htmlwidget-427de8a9d2423536da4d">{"x":{"hc_opts":{"chart":{"reflow":true},"title":{"text":null},"yAxis":{"title":{"text":[]}},"credits":{"enabled":false},"exporting":{"enabled":false},"boost":{"enabled":false},"plotOptions":{"series":{"label":{"enabled":false},"turboThreshold":0,"showInLegend":false},"treemap":{"layoutAlgorithm":"squarified"},"scatter":{"marker":{"symbol":"circle"}}},"series":[{"group":"group","data":[{"word":"Item ","freq":19,"name":"Item ","weight":2.94443897916644},{"word":"Durchführungsobjektivität ","freq":47,"name":"Durchführungsobjektivität ","weight":3.85014760171006},{"word":"Durchführungsobjektivität ","freq":21,"name":"Durchführungsobjektivität ","weight":3.04452243772342},{"word":"messen ","freq":48,"name":"messen ","weight":3.87120101090789},{"word":"Kriteriumsvalidität ","freq":5,"name":"Kriteriumsvalidität ","weight":1.6094379124341},{"word":"Anker ","freq":12,"name":"Anker ","weight":2.484906649788},{"word":"Anker ","freq":21,"name":"Anker ","weight":3.04452243772342},{"word":"Item ","freq":22,"name":"Item ","weight":3.09104245335832},{"word":"Item ","freq":29,"name":"Item ","weight":3.36729582998647},{"word":"Durchführungsobjektivität ","freq":34,"name":"Durchführungsobjektivität ","weight":3.52636052461616},{"word":"Durchführungsobjektivität ","freq":19,"name":"Durchführungsobjektivität ","weight":2.94443897916644},{"word":"Kriteriumsvalidität ","freq":19,"name":"Kriteriumsvalidität ","weight":2.94443897916644},{"word":"Anker ","freq":43,"name":"Anker ","weight":3.76120011569356},{"word":"Kriteriumsvalidität ","freq":49,"name":"Kriteriumsvalidität ","weight":3.89182029811063},{"word":"Anker ","freq":40,"name":"Anker ","weight":3.68887945411394},{"word":"Interpretationsobjektivität ","freq":13,"name":"Interpretationsobjektivität ","weight":2.56494935746154},{"word":"Item ","freq":9,"name":"Item ","weight":2.19722457733622},{"word":"Messung ","freq":20,"name":"Messung ","weight":2.99573227355399},{"word":"Durchführungsobjektivität ","freq":36,"name":"Durchführungsobjektivität ","weight":3.58351893845611},{"word":"Likertitem ","freq":39,"name":"Likertitem ","weight":3.66356164612965},{"word":"Item ","freq":48,"name":"Item ","weight":3.87120101090789},{"word":"Anker ","freq":35,"name":"Anker ","weight":3.55534806148941},{"word":"messen ","freq":20,"name":"messen ","weight":2.99573227355399},{"word":"messen ","freq":7,"name":"messen ","weight":1.94591014905531},{"word":"Homomorphismus ","freq":44,"name":"Homomorphismus ","weight":3.78418963391826},{"word":"Konstruktvalidität ","freq":23,"name":"Konstruktvalidität ","weight":3.13549421592915},{"word":"Konstruktvalidität ","freq":50,"name":"Konstruktvalidität ","weight":3.91202300542815},{"word":"messen ","freq":24,"name":"messen ","weight":3.17805383034795},{"word":"Reliabilität ","freq":46,"name":"Reliabilität ","weight":3.8286413964891},{"word":"Kriteriumsvalidität ","freq":42,"name":"Kriteriumsvalidität ","weight":3.73766961828337}],"type":"wordcloud"}],"xAxis":{"type":null,"title":{"text":[]},"categories":null},"colors":["#8CD00095"]},"theme":{"chart":{"backgroundColor":"transparent"},"colors":["#7cb5ec","#434348","#90ed7d","#f7a35c","#8085e9","#f15c80","#e4d354","#2b908f","#f45b5b","#91e8e1"]},"conf_opts":{"global":{"Date":null,"VMLRadialGradientURL":"http =//code.highcharts.com/list(version)/gfx/vml-radial-gradient.png","canvasToolsURL":"http =//code.highcharts.com/list(version)/modules/canvas-tools.js","getTimezoneOffset":null,"timezoneOffset":0,"useUTC":true},"lang":{"contextButtonTitle":"Chart context menu","decimalPoint":".","downloadCSV":"Download CSV","downloadJPEG":"Download JPEG image","downloadPDF":"Download PDF document","downloadPNG":"Download PNG image","downloadSVG":"Download SVG vector image","downloadXLS":"Download XLS","drillUpText":"◁ Back to {series.name}","exitFullscreen":"Exit from full screen","exportData":{"annotationHeader":"Annotations","categoryDatetimeHeader":"DateTime","categoryHeader":"Category"},"hideData":"Hide data table","invalidDate":null,"loading":"Loading...","months":["January","February","March","April","May","June","July","August","September","October","November","December"],"noData":"No data to display","numericSymbolMagnitude":1000,"numericSymbols":["k","M","G","T","P","E"],"printChart":"Print chart","resetZoom":"Reset zoom","resetZoomTitle":"Reset zoom level 1:1","shortMonths":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"shortWeekdays":["Sat","Sun","Mon","Tue","Wed","Thu","Fri"],"thousandsSep":" ","viewData":"View data table","viewFullscreen":"View in full screen","weekdays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]}},"type":"chart","fonts":[],"debug":false},"evals":[],"jsHooks":[]}</script>
+
+---
+## Beispielstudie: *Elicitations from the Gender Star Form*
+### Körner et al (2022); Pressemitteilung https://bit.ly/merk057
+Körner, A., Abraham, B., Rummer, R., &amp; Strack, F. (2022). Gender Representations Elicited by the Gender Star Form. Journal of Language and Social Psychology, 0261927X2210801. https://doi.org/10.1177/0261927X221080181
+
+&lt;center&gt;
+&lt;iframe id="frame01" src='https://www.uni-kassel.de/uni/aktuelles/meldung/2022/03/2/psycholinguistik-das-gender-sternchen-laesst-uns-bevorzugt-an-frauen-denken?cHash=0b83861f337f2eb6e520fd33b0b7d4d3'&gt;&lt;/iframe&gt;
+&lt;/center&gt;
+&lt;style&gt;
+#frame01{ height: 330px; width: 1200px; align: center; overflow: scroll;}
+&lt;/style&gt;
+
+---
+## Körner et al (2022)
+
+&lt;embed src="Korner_et_al_2022.pdf" width="500" height="1200" 
+ type="application/pdf"&gt;
+
+
+---
+class: middle center hide_logo
+
+Uns interessiert, welche Verbindungen von Sätzen als sinnvoll eingeschätzt werden. 
+Dazu bekommen Sie von uns zwei Sätze und Sie sollen jedes Mal beurteilen, ob der zweite Satz eine sinnvolle Fortsetzung des ersten sein könnte.
+
+In den Sätzen wird es um Gruppen von Menschen gehen. Wir verwenden dabei die maskuline Pluralform (z.B. die Berater); damit sind sowohl Frauen als auch Männer gemeint. 
+
+Genauer gesagt sehen Sie erst den ersten Satz. Wenn Sie diesen gelesen haben, drücken Sie bitte die Leertaste. 
+Dann sehen Sie den zweiten Satz. Wenn Sie denken, dass dieser Satz als Fortsetzung sinnvoll ist, drücken sie **j**, wenn nicht, drücken Sie **f**. 
+
+
+---
+class: middle center hide_logo
+
+.em12[Die Kellner liefen durch den Bahnhof.]
+
+.phg[.em08[Drücken Sie die Leertaste, wenn Sie den Satz gelesen haben.]]
+
+---
+class: middle center
+
+.em12[Es war offensichtlich, dass die meisten Frauen gut gelaunt waren.]
+.phg[.em08[Wenn Sie denken, dass dieser Satz als Fortsetzung sinnvoll ist, drücken sie **j**, wenn nicht, drücken Sie **f**.]]
+
+---
+class: middle center hide_logo
+
+.em12[Die Mütter warteten am Rathaus.]
+
+.phg[.em08[Drücken Sie die Leertaste, wenn Sie den Satz gelesen haben.]]
+
+---
+class: middle center
+
+.em12[Wegen des bewölkten Wetters trug eine der Frauen einen Regenschirm.]
+
+.phg[.em08[Wenn Sie denken, dass dieser Satz als Fortsetzung sinnvoll ist, drücken sie **j**, wenn nicht, drücken Sie **f**.]]
+
+
+&lt;!-- Jetzt Sternchenform --&gt;&lt;!-- Jetzt Sternchenform --&gt;&lt;!-- Jetzt Sternchenform --&gt;
+
+---
+class: middle center hide_logo
+
+Uns interessiert, welche Verbindungen von Sätzen als sinnvoll eingeschätzt werden. 
+Dazu bekommen Sie von uns zwei Sätze und Sie sollen jedes Mal beurteilen, ob der zweite Satz eine sinnvolle Fortsetzung des ersten sein könnte.
+
+In den Sätzen wird es um Gruppen von Menschen gehen. Wir verwenden dabei die genderneutrale Pluralform (z.B. die Berater*innen); damit sind sowohl Frauen als auch Männer gemeint.
+
+Genauer gesagt sehen Sie erst den ersten Satz. Wenn Sie diesen gelesen haben, drücken Sie bitte die Leertaste. 
+Dann sehen Sie den zweiten Satz. Wenn Sie denken, dass dieser Satz als Fortsetzung sinnvoll ist, drücken sie **j**, wenn nicht, drücken Sie **f**. 
+
+---
+class: middle center hide_logo
+
+.em12[Die Kellner*innen liefen durch den Bahnhof.]
+
+.phg[.em08[Drücken Sie die Leertaste, wenn Sie den Satz gelesen haben.]]
+
+---
+class: middle center
+
+.em12[Es war offensichtlich, dass die meisten Frauen gut gelaunt waren.]
+
+.phg[.em08[Wenn Sie denken, dass dieser Satz als Fortsetzung sinnvoll ist, drücken sie *j*, wenn nicht, drücken Sie *f*.]]
+---
+class: middle center hide_logo
+
+.em12[Die Mütter warteten am Rathaus.]
+
+.phg[.em08[Drücken Sie die Leertaste, wenn Sie den Satz gelesen haben.]]
+
+---
+class: middle center
+
+.em12[Wegen des bewölkten Wetters trug eine der Frauen einen Regenschirm.]  
+
+.phg[.em08[Wenn Sie denken, dass dieser Satz als Fortsetzung sinnvoll ist, drücken sie *j*, wenn nicht, drücken Sie *f*.]]
+
+
+---
+## Verständnisrückfragen zum Experiment?
+
+--
+
+## Wenden Sie die Begriffe auf das Experiment an:
+
+* Was steigert die Objektivität, was senkt sie?
+* Wie kann die Reliabilität in diesem Fall gesteigert werden?
+* Was bedeutet Konstruktvalidität in diesem Fall?
+   * Was genau wird gemessen?
+   * Wie werden diese Messwerte interpretiert?
+   * Ist diese Interpretation angemessen?
+
+
+---
+# Ihre Fragen &lt;i class="far fa-question-circle"&gt;&lt;/i&gt;
+Stellen Sie Ihre Fragen zu Video/Aufgaben unter http://bit.ly/merk006 und voten Sie die Fragen Ihrer Kommiliton*innen.
+
+
+---
+## Vertiefung: Messtheoretische Qualität von Noten
+* Was bedeuten hier 
+    * Objektivität
+    * Reliabilität
+    * Konstruktvalidität?
+    
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9",
+"navigation": {
+"scroll": false,
+"click": false,
+"touch": true
+}
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
